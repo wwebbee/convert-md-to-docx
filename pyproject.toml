@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "md2docx"
+version = "1.0.0"
+description = "Convert Markdown files to Word (.docx) keeping the text unchanged."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+dependencies = [
+    "python-docx>=1.0.0",
+]
+
+[project.scripts]
+md2docx = "md2docx:main"
+
+[project.optional-dependencies]
+dev = [
+    "python-docx>=1.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["md2docx*"]
+namespaces = false
